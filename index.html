@@ -1,107 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naughty Crew Recruitment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Naughty Crew — Reclutamento</title>
+  <meta name="description" content="Unisciti alla Naughty Crew — ORG di Fuorilegge su Star Citizen. Reclutamento aperto!">
+  <meta property="og:title" content="Naughty Crew — Reclutamento">
+  <meta property="og:description" content="Unisciti alla Naughty Crew — ORG di Fuorilegge su Star Citizen.">
+  <meta property="og:image" content="logoNC.png">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #0d0d0d;
-      color: #fff;
-      font-family: 'Trebuchet MS', sans-serif;
-      text-align: center;
-      padding: 50px;
-      background-image: url('https://i.ibb.co/4VpbRrb/A-circular-logo-design-for-the-Naughty-Crew-feat.png');
-      background-repeat: no-repeat;
-      background-position: center 80px;
-      background-size: 200px;
+    :root{
+      --bg:#0a0a0a;
+      --card:#0f0f0f;
+      --accent:#b71c1c;
+      --muted:#cfcfcf;
+      --radius:16px;
     }
-
-    h1 {
-      color: #ff1a1a;
-      font-size: 2.8em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 8px #000;
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Rubik,system-ui,Arial,sans-serif;
+      background: radial-gradient(circle at 10% 10%, #070707 0%, #050505 30%, #000000 100%);
+      color:var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
     }
-
-    h2 {
-      color: #b30000;
-      margin-top: 0;
-      margin-bottom: 40px;
+    .wrapper{
+      max-width:920px;
+      width:100%;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+      border-radius:var(--radius);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:360px 1fr;
     }
-
-    form {
-      margin-top: 320px;
-      display: inline-block;
-      text-align: left;
-      background-color: rgba(20, 20, 20, 0.8);
-      padding: 30px;
-      border-radius: 10px;
-      border: 2px solid #660000;
-      width: 300px;
-      box-shadow: 0 0 10px #900;
+    @media (max-width:760px){
+      .wrapper{grid-template-columns:1fr; padding-bottom:16px}
     }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #ff4d4d;
+    .left{
+      background:linear-gradient(180deg,#080808,#0b0b0b);
+      padding:36px 28px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      align-items:center;
+      justify-content:center;
     }
-
-    input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
-      background-color: #1a1a1a;
-      color: #fff;
-      font-size: 14px;
+    .logo{
+      width:220px; height:220px; border-radius:50%;
+      background:#000 url('logo.png') center/cover no-repeat;
+      display:flex; align-items:center; justify-content:center;
+      border:6px solid rgba(183,28,28,0.15);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 10px 30px rgba(0,0,0,0.6);
     }
-
-    button {
-      background-color: #b30000;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
+    .tagline{
+      font-family:'IM Fell English SC', serif;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:var(--accent);
+      font-size:18px;
+      text-align:center;
     }
-
-    button:hover {
-      background-color: #ff1a1a;
+    .title{
+      font-size:28px; font-weight:700; text-align:center; color:#fff;
+      text-shadow:0 2px 0 rgba(0,0,0,0.6);
     }
-
-    footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #666;
+    .right{padding:28px 32px;}
+    h2{margin:0 0 8px 0; font-size:20px}
+    p{margin:0 0 12px 0; color:#bdbdbd}
+    .features{display:flex; gap:12px; flex-wrap:wrap; margin:12px 0}
+    .chip{background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); padding:8px 12px; border-radius:999px; font-size:14px}
+    .cta-row{display:flex; gap:12px; align-items:center; margin-top:16px}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:10px; background:var(--accent); color:#111; font-weight:700; text-decoration:none;
+      box-shadow: 0 6px 20px rgba(183,28,28,0.12); border:1px solid rgba(0,0,0,0.4);
+      cursor:pointer;
     }
+    .btn-ghost{background:transparent; color:var(--muted); border:1px dashed rgba(255,255,255,0.06)}
+    .small{font-size:13px; color:#9f9f9f}
+    form{margin-top:18px; display:flex; gap:8px; flex-wrap:wrap}
+    input,select,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px;border-radius:10px;min-height:44px;width:100%}
+    input::placeholder{color:#7d7d7d}
+    textarea{min-height:100px; resize:vertical}
+    footer{padding:12px 18px; text-align:center; font-size:13px; color:#8f8f8f}
+    .grunge{position:relative}
+    .grunge::after{content:'';position:absolute;inset:0;background-image:linear-gradient(transparent, rgba(0,0,0,0.15));mix-blend-mode:multiply;pointer-events:none}
   </style>
 </head>
 <body>
-  <h1>Naughty Crew</h1>
-  <h2>Reclutamento Ufficiale</h2>
+  <div class="wrapper grunge">
+    <div class="left">
+      <div class="logo" role="img" aria-label="Logo Naughty Crew"></div>
+      <div class="tagline">Fuorilegge Spaziali</div>
+      <div class="title">Naughty Crew</div>
+      <div class="small">Siamo una community per giocatori di Star Citizen, roleplayer e cacciatori di gloria. Cerchiamo nuovi membri coraggiosi.</div>
+    </div>
+    <div class="right">
+      <h2>Perché unirsi?</h2>
+      <p>Missioni, serate PvP/PvE, eventi a tema e una community affiatata. Non servono requisiti particolari: voglia di giocare e rispetto.</p>
+      <div class="features">
+        <div class="chip">Eventi settimanali</div>
+        <div class="chip">Ruoli: Vari</div>
+        <div class="chip">Roleplay opzionale</div>
+        <div class="chip">Canali privati</div>
+      </div>
 
-  <form action="mailto:naughtycrew.recruitment@gmail.com?subject=Richiesta%20di%20reclutamento%20-%20Naughty%20Crew&body=Ciao%20Naughty%20Crew,%20vorrei%20unirmi%20al%20vostro%20team!" method="post" enctype="text/plain">
-    <label for="name">Nome</label>
-    <input type="text" id="name" name="name" required>
+      <div class="cta-row">
+        <a class="btn" href="https://discord.gg/6dc6Y4USZP" target="_blank" rel="noopener">Unisciti al Discord</a>
+        <a class="btn btn-ghost" href="mailto:naughtycrew.recruitment@gmail.com?subject=Reclutamento%20Naughty%20Crew">Contattaci via email</a>
+      </div>
 
-    <label for="discord">Nome Discord</label>
-    <input type="text" id="discord" name="discord" required>
+      <form id="recruitForm">
+        <input type="text" id="nome" name="Nome o Nickname" placeholder="Nickname / Nome (obbligatorio)" required>
+        <input type="text" id="eta" name="Età" placeholder="Età (opzionale)">
+        <input type="text" id="ruolo" name="Ruolo preferito" placeholder="Ruolo preferito (es. DPS, Tank)">
+        <input type="url" id="profilo" name="Profilo" placeholder="Link profilo (opzionale)">
+        <textarea id="note" name="Motivazione" placeholder="Perché vuoi unirti? (massimo 300 caratteri)"></textarea>
+        <button class="btn" type="submit">Invia candidatura</button>
+      </form>
 
-    <label for="message">Motivazione</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:18px 0">
+      <div class="small">Hai già l'invito? Clicca "Unisciti al Discord" o copia il link. Per richieste speciali scrivi a <strong>naughtycrew.recruitment@gmail.com</strong>.</div>
+      <footer>© Naughty Crew — Fuorilegge Spaziali</footer>
+    </div>
+  </div>
 
-    <button type="submit">Invia richiesta</button>
-  </form>
+  <script>
+    document.getElementById("recruitForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const eta = document.getElementById("eta").value;
+      const ruolo = document.getElementById("ruolo").value;
+      const profilo = document.getElementById("profilo").value;
+      const note = document.getElementById("note").value;
 
-  <footer>
-    © 2025 Naughty Crew - Tutti i diritti riservati
-  </footer>
+      const subject = encodeURIComponent("Nuova candidatura — Naughty Crew");
+      const body = encodeURIComponent(
+        `Candidatura ricevuta:\n\n` +
+        `Nome / Nickname: ${nome}\n` +
+        `Età: ${eta}\n` +
+        `Ruolo preferito: ${ruolo}\n` +
+        `Profilo: ${profilo}\n` +
+        `Motivazione:\n${note}\n\n` +
+        `---\nInviato dal modulo reclutamento Naughty Crew`
+      );
+
+      window.location.href = `mailto:naughtycrew.recruitment@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
 </body>
 </html>
